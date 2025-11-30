@@ -23,6 +23,13 @@
 - **MySQL**
 - **Data Structures & Algorithms (DSA)**
 
+### 🌱 Currently Learning:  
+- MySQL
+- SpringBoot
+- Maven
+- JPA Hibernate
+- REST API
+- Docker
 ---
   
 ### 🏆 **GitHub Trophies**
