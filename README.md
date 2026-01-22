@@ -26,9 +26,13 @@
 ### 🌱 Currently Learning:  
 - MySQL
 - SpringBoot
-- Maven
+- MVC
+- Spring Security
+- JWT
+- Clean Code Architecture
 - JPA Hibernate
 - REST API
+- Maven
 - Docker
 
  ### 🚀 Technologies & tools
