@@ -77,10 +77,17 @@ and modern **frontend development**.
 ---
 
 ## 🔥 Daily Streak
-
-<p align="center">
-  <img 
-    src="https://github-readme-streak-stats.herokuapp.com/?user=Md-sihab11&theme=tokyonight&hide_border=true"
-    alt="GitHub Streak"
-  />
-</p>
+<!-- 🔥 GitHub Daily Streak Section -->
+<div align="center">
+  <br />
+  <p align="center">
+    <a href="https://github.com/Md-sihab11">
+      <img 
+        src="https://github-readme-streak-stats.herokuapp.com/?user=Md-sihab11&theme=tokyonight&hide_border=true&border_radius=8&date_format=j%20M%5B%20Y%5D" 
+        alt="Md-sihab11's GitHub Streak" 
+        width="60%"
+      />
+    </a>
+  </p>
+  <br />
+</div>
