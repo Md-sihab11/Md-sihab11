@@ -1,22 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
   <defs>
-    <!-- Ultra Dark Navy/Charcoal Background Gradient (Matching Image) -->
+    <!-- Ultra Dark Navy Background Gradient -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#060911"/>
       <stop offset="50%" stop-color="#0a0e17"/>
       <stop offset="100%" stop-color="#080b12"/>
     </linearGradient>
 
-    <!-- EXACT SUBTLE GRID PATTERN -->
-    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#334155" stroke-width="1" opacity="0.25"/>
+    <!-- PERFECT REPEATING GRID PATTERN (40x40 divides 1200x400 perfectly) -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="1" opacity="0.3"/>
     </pattern>
+
+    <!-- MASK TO BLEND GRID SMOOTHLY INTO EDGES (NO HARD CORNERS/SEAMS) -->
+    <mask id="gridFadeMask">
+      <rect width="1200" height="400" fill="url(#maskGradient)"/>
+    </mask>
+
+    <radialGradient id="maskGradient" cx="50%" cy="50%" r="65%">
+      <stop offset="40%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
 
     <!-- Dark Metallic Badge Gradient -->
     <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#090d16"/>
       <stop offset="50%" stop-color="#111827"/>
       <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+
+    <!-- Flip Card Gradient -->
+    <linearGradient id="flipCardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#0b0f19"/>
     </linearGradient>
 
     <!-- Glow Filters -->
@@ -94,14 +111,43 @@
         font-weight: 800;
         font-size: 13px;
       }
+
+      .flip-num {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 800;
+        font-size: 28px;
+        fill: #ffffff;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+
+      .flip-label {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        fill: #94a3b8;
+        letter-spacing: 1px;
+        text-anchor: middle;
+      }
+
+      @keyframes flipAnim {
+        0% { transform: rotateX(0deg); }
+        50% { transform: rotateX(-90deg); opacity: 0.5; }
+        100% { transform: rotateX(0deg); }
+      }
+
+      .flipping {
+        animation: flipAnim 0.6s ease-in-out;
+        transform-origin: center;
+      }
     </style>
   </defs>
 
-  <!-- BACKGROUND GRADIENT -->
+  <!-- SOLID BACKGROUND GRADIENT -->
   <rect width="1200" height="400" fill="url(#bg)"/>
 
-  <!-- SUBTLE GRID OVERLAY -->
-  <rect width="1200" height="400" fill="url(#grid)"/>
+  <!-- GRID WITH FADE MASK (SEAMLESS EDGE BLENDING) -->
+  <rect width="1200" height="400" fill="url(#grid)" mask="url(#gridFadeMask)"/>
 
   <!-- DEEP SOFT LIGHT ORBS -->
   <circle cx="420" cy="190" r="180" fill="#0284c7" opacity=".12" filter="url(#bigGlow)"/>
@@ -176,7 +222,7 @@
   </text>
 
   <!-- SPIDER CLOCK -->
-  <g transform="translate(425 200) scale(1.35)">
+  <g transform="translate(425 180) scale(1.15)">
     <g stroke="#38bdf8" stroke-width="1.3" opacity="0.75" fill="none">
       <line x1="0" y1="0" x2="-80" y2="0"/>
       <line x1="0" y1="0" x2="-69" y2="40"/>
@@ -247,6 +293,64 @@
 
     <circle cx="0" cy="0" r="3" fill="#38bdf8" filter="url(#glow)"/>
     <circle cx="0" cy="0" r="1" fill="#ffffff"/>
+  </g>
+
+  <!-- REAL-TIME BANGLADESH FLIP CLOCK (Scaled down and adjusted smaller) -->
+  <g transform="translate(355, 292) scale(0.78)" filter="url(#glow)">
+    <!-- Outer Frame Background -->
+    <rect x="-12" y="-10" width="248" height="68" rx="6" fill="#030712" stroke="#1f2937" stroke-width="2"/>
+
+    <!-- HOUR DIGIT 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="32" height="46" rx="4" fill="url(#flipCardBg)" stroke="#374155" stroke-width="1"/>
+      <line x1="0" y1="23" x2="32" y2="23" stroke="#000000" stroke-width="1.5"/>
+      <text id="h1" x="16" y="23" class="flip-num">0</text>
+    </g>
+    <!-- HOUR DIGIT 2 -->
+    <g transform="translate(35, 0)">
+      <rect width="32" height="46" rx="4" fill="url(#flipCardBg)" stroke="#374155" stroke-width="1"/>
+      <line x1="0" y1="23" x2="32" y2="23" stroke="#000000" stroke-width="1.5"/>
+      <text id="h2" x="16" y="23" class="flip-num">0</text>
+    </g>
+
+    <!-- COLON 1 -->
+    <circle cx="76" cy="16" r="2" fill="#38bdf8"/>
+    <circle cx="76" cy="30" r="2" fill="#38bdf8"/>
+
+    <!-- MINUTE DIGIT 1 -->
+    <g transform="translate(87, 0)">
+      <rect width="32" height="46" rx="4" fill="url(#flipCardBg)" stroke="#374155" stroke-width="1"/>
+      <line x1="0" y1="23" x2="32" y2="23" stroke="#000000" stroke-width="1.5"/>
+      <text id="m1" x="16" y="23" class="flip-num">0</text>
+    </g>
+    <!-- MINUTE DIGIT 2 -->
+    <g transform="translate(122, 0)">
+      <rect width="32" height="46" rx="4" fill="url(#flipCardBg)" stroke="#374155" stroke-width="1"/>
+      <line x1="0" y1="23" x2="32" y2="23" stroke="#000000" stroke-width="1.5"/>
+      <text id="m2" x="16" y="23" class="flip-num">0</text>
+    </g>
+
+    <!-- COLON 2 -->
+    <circle cx="163" cy="16" r="2" fill="#38bdf8"/>
+    <circle cx="163" cy="30" r="2" fill="#38bdf8"/>
+
+    <!-- SECOND DIGIT 1 -->
+    <g transform="translate(174, 0)">
+      <rect width="32" height="46" rx="4" fill="url(#flipCardBg)" stroke="#374155" stroke-width="1"/>
+      <line x1="0" y1="23" x2="32" y2="23" stroke="#000000" stroke-width="1.5"/>
+      <text id="s1" x="16" y="23" class="flip-num">0</text>
+    </g>
+    <!-- SECOND DIGIT 2 -->
+    <g transform="translate(209, 0)">
+      <rect width="32" height="46" rx="4" fill="url(#flipCardBg)" stroke="#374155" stroke-width="1"/>
+      <line x1="0" y1="23" x2="32" y2="23" stroke="#000000" stroke-width="1.5"/>
+      <text id="s2" x="16" y="23" class="flip-num">0</text>
+    </g>
+
+    <!-- LABELS -->
+    <text x="32" y="56" class="flip-label">HRS</text>
+    <text x="122" y="56" class="flip-label">MINS</text>
+    <text x="192" y="56" class="flip-label">SECS</text>
   </g>
 
   <!-- FLOATING TECH ICONS -->
@@ -355,4 +459,50 @@
     <text x="35" y="16" class="contact">mdsihabsharar22@gmail.com</text>
   </g>
 
+  <!-- EMBEDDED SCRIPT FOR REAL-TIME BANGLADESH FLIP CLOCK -->
+  <script type="text/javascript">
+    <![CDATA[
+    function updateClock() {
+      const options = { timeZone: 'Asia/Dhaka', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const formatter = new Intl.DateTimeFormat([], options);
+      const parts = formatter.formatToParts(new Date());
+      
+      let hours = '00', minutes = '00', seconds = '00';
+      parts.forEach(p => {
+        if (p.type === 'hour') hours = p.value;
+        if (p.type === 'minute') minutes = p.value;
+        if (p.type === 'second') seconds = p.value;
+      });
+
+      const timeString = hours + minutes + seconds;
+      const prevString = window._prevTime || "";
+
+      updateDigit('h1', timeString[0], prevString[0] !== timeString[0]);
+      updateDigit('h2', timeString[1], prevString[1] !== timeString[1]);
+      updateDigit('m1', timeString[2], prevString[2] !== timeString[2]);
+      updateDigit('m2', timeString[3], prevString[3] !== timeString[3]);
+      updateDigit('s1', timeString[4], prevString[4] !== timeString[4]);
+      updateDigit('s2', timeString[5], prevString[5] !== timeString[5]);
+
+      window._prevTime = timeString;
+    }
+
+    function updateDigit(id, newVal, shouldFlip) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (el.textContent !== newVal) {
+        el.textContent = newVal;
+        if (shouldFlip) {
+          const parent = el.parentNode;
+          parent.classList.remove('flipping');
+          void parent.offsetWidth; 
+          parent.classList.add('flipping');
+        }
+      }
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+    ]]>
+  </script>
 </svg>
