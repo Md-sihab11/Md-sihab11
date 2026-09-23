@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="./banner.svg" width="100%" alt="Md Sihab Sharar Banner">
-</p>
+![Header Banner](./header.svg)
 
 ## 👨‍💻 About Me
 
