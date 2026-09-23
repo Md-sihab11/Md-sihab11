@@ -20,7 +20,7 @@
 [![Languages](https://skillicons.dev/icons?i=c,cpp,java,python,javascript,typescript)](https://github.com/Md-sihab11)
 
 ### Frameworks & Libraries:
-[![Frameworks & Libraries](https://skillicons.dev/icons?i=spring,react,tailwind)](https://github.com/Md-sihab11)
+[![Frameworks & Libraries](https://skillicons.dev/icons?i=spring,react,nextjs,tailwind)](https://github.com/Md-sihab11)
 
 ### Web Technologies:
 [![Web Technologies](https://skillicons.dev/icons?i=html,css)](https://github.com/Md-sihab11)
