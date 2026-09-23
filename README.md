@@ -30,19 +30,19 @@ and modern **frontend development**.
 
 <p align="center">
 
-<a href="YOUR_CODEFORCES_LINK">
+<a href="[codeforces](https://codeforces.com/profile/shihab1122)">
   <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white"/>
 </a>
 
-<a href="YOUR_LEETCODE_LINK">
+<a href="[LEETCODE](https://leetcode.com/u/mdshihab1122/)">
   <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
 </a>
 
-<a href="YOUR_HACKERRANK_LINK">
+<a href="[HACKERRANK](https://www.hackerrank.com/profile/mdsihabsharar22)">
   <img src="https://img.shields.io/badge/HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=black"/>
 </a>
 
-<a href="YOUR_CODECHEF_LINK">
+<a href="[CODECHEF](https://www.codechef.com/users/shihab_11)">
   <img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white"/>
 </a>
 
