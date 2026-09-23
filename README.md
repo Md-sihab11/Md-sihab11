@@ -1,14 +1,6 @@
-# 👋 Hi, I'm Md Shihab
-
-<h3 align="center">
-  Java & Spring Boot Developer
-</h3>
-
 <p align="center">
-  Building modern, scalable & user-friendly web applications 🚀
+  <img src="./banner.svg" width="100%" alt="Md Sihab Sharar Banner">
 </p>
-
----
 
 ## 👨‍💻 About Me
 
@@ -22,7 +14,9 @@ and modern **frontend development**.
 - 🔧 Using **Git & GitHub** for version control
 - 💡 Love learning new technologies and solving programming problems
 
----
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%" alt="Animated Banner">
+</p>
 
 ## 🛠️ Tech Stack
 
@@ -30,7 +24,9 @@ and modern **frontend development**.
   <img src="https://skillicons.dev/icons?i=c,cpp,java,spring,python,html,css,js,typescript,react,tailwind,mysql,git,github" />
 </p>
 
----
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%" alt="Animated Banner">
+</p>
 
 ## 🧩 Programming Sites
 
@@ -54,7 +50,9 @@ and modern **frontend development**.
 
 </p>
 
----
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%" alt="Animated Banner">
+</p>
 
 ## 📫 Connect With Me
 
@@ -74,7 +72,9 @@ and modern **frontend development**.
 
 </p>
 
----
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%" alt="Animated Banner">
+</p>
 
 ## 🔥 Daily Streak
 <!-- 🔥 GitHub Daily Streak Section -->
@@ -91,3 +91,11 @@ and modern **frontend development**.
   </p>
   <br />
 </div>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%" alt="Animated Banner">
+</p> 
+
+👀 Profile Views
+
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=Md-sihab11&style=for-the-badge&color=blueviolet" alt="Profile Views" /> </p>
