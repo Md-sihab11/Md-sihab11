@@ -1,1 +1,187 @@
 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Web Fonts to match the exact look -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;family=Inter:wght@400;600;700;800&amp;display=swap');
+      .title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 58px; fill: #ffffff; letter-spacing: 1px; }
+      .subtitle { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 28px; fill: #a5caff; }
+      .tagline { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 20px; fill: #e2e8f0; }
+      .badge-text { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 24px; fill: #ffffff; }
+      .signature { font-family: 'Caveat', cursive; font-size: 64px; fill: #60a5fa; }
+      .contact-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; fill: #cbd5e1; }
+    </style>
+
+    <!-- Background Gradients & Glows -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0b1a" />
+      <stop offset="50%" stop-color="#141a33" />
+      <stop offset="100%" stop-color="#16082b" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="heavyGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="45" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Deep Background -->
+  <rect width="1200" height="400" fill="url(#bg)" />
+
+  <!-- Nebula / Space Glow Effects -->
+  <circle cx="480" cy="180" r="180" fill="#0284c7" opacity="0.35" filter="url(#heavyGlow)" />
+  <circle cx="1000" cy="150" r="250" fill="#4c1d95" opacity="0.25" filter="url(#heavyGlow)" />
+  <circle cx="200" cy="300" r="150" fill="#2563eb" opacity="0.2" filter="url(#heavyGlow)" />
+
+  <!-- Circuit Lines -->
+  <path d="M 450 0 L 450 60 L 520 110" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.4" />
+  <circle cx="450" cy="60" r="3" fill="#38bdf8" filter="url(#glow)" />
+
+  <path d="M 420 400 L 420 220 L 370 170 L 300 170" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.5" />
+  <circle cx="420" cy="220" r="3" fill="#60a5fa" filter="url(#glow)" />
+  <circle cx="370" cy="170" r="4" fill="#60a5fa" filter="url(#glow)" />
+  <circle cx="420" cy="350" r="4" fill="#38bdf8" filter="url(#glow)" />
+
+  <!-- ================= TOP LEFT: BADGE & SIGNATURE ================= -->
+  
+  <!-- "Let's Collaborate!" Pill Badge -->
+  <g transform="translate(30, 30)">
+    <rect x="0" y="0" width="280" height="65" rx="32.5" fill="#1b2545" stroke="#4f8aff" stroke-width="2" filter="url(#glow)" />
+    <text x="140" y="41" class="badge-text" text-anchor="middle">Let's Collaborate!</text>
+  </g>
+
+  <!-- Arrow pointing down -->
+  <path d="M 70 95 Q 60 150 110 170" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" />
+  <polygon points="110,170 100,165 102,176" fill="#60a5fa" />
+
+  <!-- Signature -->
+  <text x="130" y="185" class="signature" filter="url(#glow)" transform="rotate(-5 130 185)">Sihab</text>
+
+
+  <!-- ================= BOTTOM LEFT: SCATTERED ICONS ================= -->
+  
+  <!-- Typescript (Blue Box) -->
+  <g transform="translate(90, 240) rotate(-15)">
+    <rect x="0" y="0" width="48" height="48" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+    <text x="24" y="32" fill="#38bdf8" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">TS</text>
+  </g>
+
+  <!-- React (Cyan Outline) -->
+  <g transform="translate(180, 245) rotate(10)">
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#22d3ee" stroke-width="2" filter="url(#glow)"/>
+    <ellipse cx="24" cy="24" rx="14" ry="5" fill="none" stroke="#22d3ee" stroke-width="2" transform="rotate(30 24 24)" />
+    <ellipse cx="24" cy="24" rx="14" ry="5" fill="none" stroke="#22d3ee" stroke-width="2" transform="rotate(-30 24 24)" />
+    <circle cx="24" cy="24" r="3" fill="#22d3ee" />
+  </g>
+
+  <!-- Next.js (Dark Circle) -->
+  <g transform="translate(265, 240) rotate(5)">
+    <circle cx="24" cy="24" r="22" fill="#111827" stroke="#94a3b8" stroke-width="2" filter="url(#glow)"/>
+    <text x="24" y="32" fill="#f8fafc" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle">N</text>
+  </g>
+
+  <!-- Abstract Swirl Icon (Right of Next) -->
+  <g transform="translate(340, 245) rotate(-10)">
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+    <path d="M 12 24 Q 24 10 36 24 T 12 24" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  </g>
+
+  <!-- PostgreSQL Elephant (Bottom Left) -->
+  <g transform="translate(130, 310) rotate(-10)">
+    <rect x="0" y="0" width="46" height="46" rx="12" fill="#1e293b" stroke="#818cf8" stroke-width="2" filter="url(#glow)"/>
+    <circle cx="23" cy="23" r="10" fill="none" stroke="#818cf8" stroke-width="2" />
+  </g>
+
+  <!-- Prisma Triangle -->
+  <g transform="translate(215, 315) rotate(15)">
+    <rect x="0" y="0" width="44" height="44" rx="10" fill="#1e293b" stroke="#60a5fa" stroke-width="2" filter="url(#glow)"/>
+    <polygon points="22,10 34,32 10,32" fill="none" stroke="#60a5fa" stroke-width="2"/>
+  </g>
+
+  <!-- Leaf (MongoDB) -->
+  <g transform="translate(300, 310) rotate(-5)">
+    <path d="M 22 5 C 32 12, 35 28, 22 40 C 9 28, 12 12, 22 5 Z" fill="#22c55e" stroke="#4ade80" stroke-width="1.5" filter="url(#glow)"/>
+    <line x1="22" y1="40" x2="22" y2="48" stroke="#4ade80" stroke-width="2" />
+  </g>
+
+
+  <!-- ================= RIGHT SIDE: MAIN TEXT & ROW ICONS ================= -->
+  
+  <g transform="translate(810, 110)">
+    <!-- Main Name -->
+    <text x="0" y="0" class="title" text-anchor="middle">Md Sihab Sharar</text>
+    
+    <!-- Swoosh Underline matching original -->
+    <path d="M -260 20 Q 0 45 280 15" fill="none" stroke="#a5caff" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Subtitle -->
+    <text x="0" y="65" class="subtitle" text-anchor="middle">Aspiring Full Stack Software Engineer</text>
+  </g>
+
+  <!-- Centered Tech Icons Row -->
+  <g transform="translate(590, 210)">
+    <!-- TS -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="40" height="40" rx="8" fill="none" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+      <text x="20" y="26" fill="#38bdf8" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle">TS</text>
+    </g>
+    <!-- React (Purple) -->
+    <g transform="translate(90, 0)">
+      <rect x="0" y="0" width="40" height="40" rx="8" fill="none" stroke="#c084fc" stroke-width="2" filter="url(#glow)"/>
+      <ellipse cx="20" cy="20" rx="12" ry="4" fill="none" stroke="#c084fc" stroke-width="1.5" transform="rotate(30 20 20)" />
+      <ellipse cx="20" cy="20" rx="12" ry="4" fill="none" stroke="#c084fc" stroke-width="1.5" transform="rotate(-30 20 20)" />
+      <circle cx="20" cy="20" r="2.5" fill="#c084fc" />
+    </g>
+    <!-- Next.js -->
+    <g transform="translate(180, 0)">
+      <rect x="0" y="0" width="40" height="40" rx="8" fill="none" stroke="#4ade80" stroke-width="2" filter="url(#glow)"/>
+      <text x="20" y="27" fill="#4ade80" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">N</text>
+    </g>
+    <!-- Prisma -->
+    <g transform="translate(270, 0)">
+      <rect x="0" y="0" width="40" height="40" rx="8" fill="none" stroke="#60a5fa" stroke-width="2" filter="url(#glow)"/>
+      <polygon points="20,10 30,28 10,28" fill="none" stroke="#60a5fa" stroke-width="1.5" />
+    </g>
+    <!-- Leaf -->
+    <g transform="translate(360, 0)">
+      <rect x="0" y="0" width="40" height="40" rx="8" fill="none" stroke="#818cf8" stroke-width="2" filter="url(#glow)"/>
+      <path d="M 20 12 C 26 16, 28 24, 20 30 C 12 24, 14 16, 20 12 Z" fill="none" stroke="#818cf8" stroke-width="1.5" />
+    </g>
+    <!-- Postgres -->
+    <g transform="translate(450, 0)">
+      <rect x="0" y="0" width="40" height="40" rx="8" fill="none" stroke="#e879f9" stroke-width="2" filter="url(#glow)"/>
+      <circle cx="20" cy="20" r="9" fill="none" stroke="#e879f9" stroke-width="1.5" />
+    </g>
+  </g>
+
+  <!-- Tagline -->
+  <text x="810" y="295" class="tagline" text-anchor="middle">Turning ideas into clean, scalable web apps</text>
+
+  <!-- Contact Info -->
+  <g transform="translate(560, 325)">
+    <!-- Email -->
+    <g transform="translate(0, 0)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+      <text x="32" y="16" class="contact-text">mdsihabsharar@email.com</text>
+    </g>
+
+    <!-- Website -->
+    <g transform="translate(330, 0)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <text x="32" y="16" class="contact-text">sihabsharar.dev</text>
+    </g>
+  </g>
+</svg>
