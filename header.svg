@@ -1,15 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
   <defs>
-    <!-- Background -->
+    <!-- Rich Navy Blue Gradient Background -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0b1a"/>
-      <stop offset="50%" stop-color="#141a33"/>
-      <stop offset="100%" stop-color="#16082b"/>
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="45%" stop-color="#0a192f"/>
+      <stop offset="85%" stop-color="#112240"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+
+    <!-- Metallic Navy Badge Gradient -->
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
 
     <!-- Glow Filters -->
     <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="brightGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -17,7 +33,7 @@
     </filter>
 
     <filter id="bigGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="35"/>
+      <feGaussianBlur stdDeviation="40"/>
     </filter>
 
     <!-- Styling with System Fallback Fonts -->
@@ -26,28 +42,28 @@
         font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         font-weight: 800;
         font-size: 58px;
-        fill: white;
+        fill: #ffffff;
       }
 
       .subtitle {
         font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         font-weight: 700;
         font-size: 28px;
-        fill: #a5caff;
+        fill: #38bdf8;
       }
 
       .tagline {
         font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         font-weight: 600;
         font-size: 20px;
-        fill: #e2e8f0;
+        fill: #94a3b8;
       }
 
       .badge {
         font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         font-weight: 700;
         font-size: 24px;
-        fill: white;
+        fill: #38bdf8;
       }
 
       .signature {
@@ -77,142 +93,113 @@
     </style>
   </defs>
 
-  <!-- SCRIPT FOR REAL-TIME CLOCK ACCURACY -->
-  <script type="text/ecmascript">
-    <![CDATA[
-      function updateLiveTime() {
-        const now = new Date();
-        
-        // Analog Clock Calculations
-        const ms = now.getMilliseconds();
-        const sec = now.getSeconds() + ms / 1000;
-        const min = now.getMinutes() + sec / 60;
-        const hr = (now.getHours() % 12) + min / 60;
-
-        const secHand = document.getElementById('sec-hand');
-        const minHand = document.getElementById('min-hand');
-        const hrHand = document.getElementById('hr-hand');
-
-        if (secHand) secHand.setAttribute('transform', 'rotate(' + (sec * 6) + ')');
-        if (minHand) minHand.setAttribute('transform', 'rotate(' + (min * 6) + ')');
-        if (hrHand) hrHand.setAttribute('transform', 'rotate(' + (hr * 30) + ')');
-
-        requestAnimationFrame(updateLiveTime);
-      }
-      
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', updateLiveTime);
-      } else {
-        updateLiveTime();
-      }
-    ]]>
-  </script>
-
   <!-- BACKGROUND -->
   <rect width="1200" height="400" fill="url(#bg)"/>
 
-  <circle cx="480" cy="180" r="180" fill="#0284c7" opacity=".25" filter="url(#bigGlow)"/>
-  <circle cx="1000" cy="150" r="230" fill="#4c1d95" opacity=".22" filter="url(#bigGlow)"/>
+  <!-- DEEP NAVY GLOW ORBS -->
+  <circle cx="420" cy="190" r="190" fill="#0284c7" opacity=".3" filter="url(#bigGlow)"/>
+  <circle cx="980" cy="150" r="240" fill="#1d4ed8" opacity=".28" filter="url(#bigGlow)"/>
+  <circle cx="150" cy="300" r="160" fill="#0369a1" opacity=".25" filter="url(#bigGlow)"/>
 
-  <!-- ANIMATED DOTTED CIRCUITS -->
-  <path d="M0 105 H90 L130 70 H270" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round" opacity=".65">
+  <!-- ANIMATED DOTTED CIRCUITS (CYAN & ELECTRIC BLUE) -->
+  <path d="M0 105 H90 L130 70 H270" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="3 8" stroke-linecap="round" opacity=".75">
     <animate attributeName="stroke-dashoffset" from="0" to="-50" dur="2s" repeatCount="indefinite"/>
   </path>
 
-  <path d="M350 0 V55 L410 110 H500" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round" opacity=".7">
+  <path d="M350 0 V55 L410 110 H500" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-dasharray="2 7" stroke-linecap="round" opacity=".75">
     <animate attributeName="stroke-dashoffset" from="0" to="-45" dur="1.8s" repeatCount="indefinite"/>
   </path>
 
-  <path d="M0 185 H55 L100 145 H210" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="1 8" stroke-linecap="round" opacity=".65">
+  <path d="M0 185 H55 L100 145 H210" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="2 8" stroke-linecap="round" opacity=".7">
     <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.5s" repeatCount="indefinite"/>
   </path>
 
-  <path d="M0 350 H70 L115 310 H230" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 9" stroke-linecap="round" opacity=".6">
+  <path d="M0 350 H70 L115 310 H230" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="3 9" stroke-linecap="round" opacity=".7">
     <animate attributeName="stroke-dashoffset" from="0" to="-44" dur="2.2s" repeatCount="indefinite"/>
   </path>
 
-  <path d="M850 0 V45 L910 85 H1030" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round" opacity=".6">
+  <path d="M850 0 V45 L910 85 H1030" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-dasharray="2 8" stroke-linecap="round" opacity=".7">
     <animate attributeName="stroke-dashoffset" from="0" to="-50" dur="2s" repeatCount="indefinite"/>
   </path>
 
-  <path d="M1000 140 H1080 L1120 180 H1200" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round" opacity=".65">
+  <path d="M1000 140 H1080 L1120 180 H1200" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="2 8" stroke-linecap="round" opacity=".75">
     <animate attributeName="stroke-dashoffset" from="0" to="-50" dur="1.7s" repeatCount="indefinite"/>
   </path>
 
-  <path d="M1200 300 H1120 L1080 340 H950" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="2 9" stroke-linecap="round" opacity=".6">
+  <path d="M1200 300 H1120 L1080 340 H950" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-dasharray="3 9" stroke-linecap="round" opacity=".7">
     <animate attributeName="stroke-dashoffset" from="0" to="-48" dur="2.1s" repeatCount="indefinite"/>
   </path>
 
-  <path d="M700 400 V370 L740 330 H850" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round" opacity=".55">
+  <path d="M700 400 V370 L740 330 H850" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="2 8" stroke-linecap="round" opacity=".65">
     <animate attributeName="stroke-dashoffset" from="0" to="-45" dur="1.9s" repeatCount="indefinite"/>
   </path>
 
   <!-- GLOWING NODES -->
-  <circle cx="90" cy="105" r="3" fill="#38bdf8" filter="url(#glow)">
-    <animate attributeName="r" values="2;5;2" dur="1.5s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values=".3;1;.3" dur="1.5s" repeatCount="indefinite"/>
+  <circle cx="90" cy="105" r="3.5" fill="#38bdf8" filter="url(#glow)">
+    <animate attributeName="r" values="2.5;5.5;2.5" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".4;1;.4" dur="1.5s" repeatCount="indefinite"/>
   </circle>
 
-  <circle cx="350" cy="55" r="3" fill="#60a5fa" filter="url(#glow)">
-    <animate attributeName="r" values="2;5;2" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
+  <circle cx="350" cy="55" r="3.5" fill="#60a5fa" filter="url(#glow)">
+    <animate attributeName="r" values="2.5;5.5;2.5" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".3;1;.3" dur="2s" repeatCount="indefinite"/>
   </circle>
 
-  <circle cx="55" cy="185" r="3" fill="#2563eb" filter="url(#glow)">
-    <animate attributeName="r" values="2;4;2" dur="1.8s" repeatCount="indefinite"/>
+  <circle cx="55" cy="185" r="3.5" fill="#0284c7" filter="url(#glow)">
+    <animate attributeName="r" values="2.5;4.5;2.5" dur="1.8s" repeatCount="indefinite"/>
   </circle>
 
-  <circle cx="850" cy="45" r="3" fill="#a78bfa" filter="url(#glow)">
-    <animate attributeName="r" values="2;5;2" dur="1.6s" repeatCount="indefinite"/>
+  <circle cx="850" cy="45" r="3.5" fill="#60a5fa" filter="url(#glow)">
+    <animate attributeName="r" values="2.5;5.5;2.5" dur="1.6s" repeatCount="indefinite"/>
   </circle>
 
-  <circle cx="1080" cy="140" r="3" fill="#22d3ee" filter="url(#glow)">
-    <animate attributeName="r" values="2;5;2" dur="1.7s" repeatCount="indefinite"/>
+  <circle cx="1080" cy="140" r="3.5" fill="#38bdf8" filter="url(#glow)">
+    <animate attributeName="r" values="2.5;5.5;2.5" dur="1.7s" repeatCount="indefinite"/>
   </circle>
 
-  <circle cx="1120" cy="300" r="3" fill="#818cf8" filter="url(#glow)">
-    <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+  <circle cx="1120" cy="300" r="3.5" fill="#818cf8" filter="url(#glow)">
+    <animate attributeName="r" values="2.5;4.5;2.5" dur="2s" repeatCount="indefinite"/>
   </circle>
 
   <!-- FLOATING ENERGY DOTS -->
-  <circle r="3" fill="#38bdf8" filter="url(#glow)">
-    <animateMotion path="M0 105 H90 L130 70 H270" dur="4s" repeatCount="indefinite"/>
+  <circle r="3" fill="#00f0ff" filter="url(#brightGlow)">
+    <animateMotion path="M0 105 H90 L130 70 H270" dur="3.8s" repeatCount="indefinite"/>
   </circle>
 
-  <circle r="2.5" fill="#60a5fa" filter="url(#glow)">
-    <animateMotion path="M350 0 V55 L410 110 H500" dur="3.5s" repeatCount="indefinite"/>
+  <circle r="3" fill="#60a5fa" filter="url(#brightGlow)">
+    <animateMotion path="M350 0 V55 L410 110 H500" dur="3.2s" repeatCount="indefinite"/>
   </circle>
 
-  <circle r="3" fill="#a78bfa" filter="url(#glow)">
-    <animateMotion path="M850 0 V45 L910 85 H1030" dur="4.5s" repeatCount="indefinite"/>
+  <circle r="3" fill="#38bdf8" filter="url(#brightGlow)">
+    <animateMotion path="M850 0 V45 L910 85 H1030" dur="4.2s" repeatCount="indefinite"/>
   </circle>
 
-  <circle r="2.5" fill="#22d3ee" filter="url(#glow)">
-    <animateMotion path="M1000 140 H1080 L1120 180 H1200" dur="3.8s" repeatCount="indefinite"/>
+  <circle r="3" fill="#00f0ff" filter="url(#brightGlow)">
+    <animateMotion path="M1000 140 H1080 L1120 180 H1200" dur="3.5s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- BADGE -->
+  <!-- COLLABORATE BADGE -->
   <g transform="translate(30 30)">
-    <rect width="280" height="65" rx="32" fill="#1b2545" stroke="#4f8aff" stroke-width="2" filter="url(#glow)"/>
+    <rect width="280" height="65" rx="32" fill="url(#badgeBg)" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
     <text x="140" y="41" class="badge" text-anchor="middle">Let's Collaborate!</text>
   </g>
 
   <!-- Arrow -->
-  <path d="M70 95 Q60 150 110 170" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
-  <polygon points="110,170 100,165 102,176" fill="#60a5fa"/>
+  <path d="M70 95 Q60 150 110 170" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="110,170 100,165 102,176" fill="#38bdf8"/>
 
   <!-- Signature -->
-  <text x="130" y="185" class="signature" transform="rotate(-5 130 185)" filter="url(#glow)">
+  <text x="130" y="185" class="signature" transform="rotate(-5 130 185)" filter="url(#brightGlow)">
     Sihab
   </text>
 
   <!-- ================================================= -->
-  <!--             REAL-TIME SPIDER CLOCK                -->
+  <!--       PURE SVG CSS ANIMATED SPIDER CLOCK          -->
   <!-- ================================================= -->
   <g transform="translate(425 200) scale(1.35)">
     
-    <!-- 1. SPIDER WEB (BOTTOM HALF) -->
-    <g stroke="#38bdf8" stroke-width="1.3" opacity="0.75" fill="none">
+    <!-- 1. SPIDER WEB (NAVY BLUE ACCENTED) -->
+    <g stroke="#38bdf8" stroke-width="1.3" opacity="0.8" fill="none">
       <line x1="0" y1="0" x2="-80" y2="0"/>
       <line x1="0" y1="0" x2="-69" y2="40"/>
       <line x1="0" y1="0" x2="-40" y2="69"/>
@@ -238,7 +225,7 @@
     </g>
 
     <!-- 2. SPIDER TOP SILHOUETTE -->
-    <g fill="#0f172a" stroke="#60a5fa" stroke-width="1.5" filter="url(#glow)">
+    <g fill="#0b1329" stroke="#38bdf8" stroke-width="1.5" filter="url(#glow)">
       <!-- Left Legs -->
       <path d="M-10 -32 C-25 -65, -45 -85, -75 -60 C-82 -54, -70 -45, -50 -55 C-35 -62, -22 -45, -12 -30 Z"/>
       <path d="M-12 -35 C-30 -70, -60 -75, -82 -35 C-86 -28, -75 -25, -60 -38 C-45 -50, -25 -45, -14 -32 Z"/>
@@ -259,8 +246,8 @@
     <circle cx="-3" cy="-38" r="1.5" fill="#f43f5e" filter="url(#glow)"/>
     <circle cx="3" cy="-38" r="1.5" fill="#f43f5e" filter="url(#glow)"/>
 
-    <!-- 3. CLOCK DIAL -->
-    <circle cx="0" cy="0" r="34" fill="#090d1a" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+    <!-- 3. CLOCK DIAL (DEEP NAVY) -->
+    <circle cx="0" cy="0" r="34" fill="#030712" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
     <circle cx="0" cy="0" r="30" fill="none" stroke="#1e293b" stroke-width="1"/>
 
     <!-- Clock Numbers -->
@@ -280,23 +267,41 @@
     </g>
 
     <!-- Inner Ticks Ring -->
-    <circle cx="0" cy="0" r="26" fill="none" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="1 3" opacity="0.6"/>
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="1 3" opacity="0.7"/>
 
-    <!-- 4. REAL-TIME DYNAMIC HANDS -->
+    <!-- 4. PURE SVG ANIMATED HANDS -->
     <!-- Hour Hand -->
     <g id="hr-hand">
       <polygon points="0,3 -2,0 0,-16 2,0" fill="#60a5fa"/>
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0" to="360"
+        dur="43200s"
+        repeatCount="indefinite"/>
     </g>
 
     <!-- Minute Hand -->
     <g id="min-hand">
       <polygon points="0,4 -1.5,0 0,-24 1.5,0" fill="#ffffff" filter="url(#glow)"/>
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0" to="360"
+        dur="3600s"
+        repeatCount="indefinite"/>
     </g>
 
     <!-- Second Hand -->
     <g id="sec-hand">
       <line x1="0" y1="6" x2="0" y2="-27" stroke="#f43f5e" stroke-width="1.2"/>
       <circle cx="0" cy="-18" r="1.8" fill="#f43f5e" filter="url(#glow)"/>
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0" to="360"
+        dur="60s"
+        repeatCount="indefinite"/>
     </g>
 
     <!-- Pivot Center Pin -->
@@ -309,28 +314,28 @@
   <!-- C -->
   <g transform="translate(45 215)">
     <animateTransform attributeName="transform" type="translate" values="45 215;45 200;45 215" dur="4s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#3b82f6" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="2" filter="url(#glow)"/>
     <text x="24" y="31" class="float-icon" fill="#3b82f6" text-anchor="middle">C</text>
   </g>
 
   <!-- C++ -->
   <g transform="translate(105 195)">
     <animateTransform attributeName="transform" type="translate" values="105 195;105 210;105 195" dur="3.5s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#60a5fa" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#60a5fa" stroke-width="2" filter="url(#glow)"/>
     <text x="24" y="31" class="float-icon" fill="#60a5fa" text-anchor="middle">C++</text>
   </g>
 
   <!-- Python -->
   <g transform="translate(170 215)">
     <animateTransform attributeName="transform" type="translate" values="170 215;170 200;170 215" dur="4.2s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#fbbf24" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="2" filter="url(#glow)"/>
     <text x="24" y="31" class="float-icon" fill="#fbbf24" text-anchor="middle">Py</text>
   </g>
 
   <!-- HTML -->
   <g transform="translate(45 285)">
     <animateTransform attributeName="transform" type="translate" values="45 285;45 300;45 285" dur="3.8s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#f97316" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#f97316" stroke-width="2" filter="url(#glow)"/>
     <polygon points="14,11 34,11 31,32 24,37 17,32" fill="none" stroke="#f97316" stroke-width="1.5"/>
     <text x="24" y="29" fill="#f97316" font-family="sans-serif" font-weight="bold" font-size="13" text-anchor="middle">5</text>
   </g>
@@ -338,7 +343,7 @@
   <!-- CSS -->
   <g transform="translate(105 300)">
     <animateTransform attributeName="transform" type="translate" values="105 300;105 285;105 300" dur="4.5s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
     <polygon points="14,11 34,11 31,32 24,37 17,32" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
     <text x="24" y="29" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="13" text-anchor="middle">3</text>
   </g>
@@ -346,7 +351,7 @@
   <!-- JAVA -->
   <g transform="translate(165 285)">
     <animateTransform attributeName="transform" type="translate" values="165 285;165 300;165 285" dur="4.1s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#f87171" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="2" filter="url(#glow)"/>
     <path d="M14 21 H32 V29 C32 34 14 34 14 29 Z" fill="none" stroke="#f87171" stroke-width="1.7"/>
     <path d="M32 23 C38 23 38 29 32 29" fill="none" stroke="#f87171" stroke-width="1.7"/>
     <path d="M18 17 C15 14 20 12 18 9" fill="none" stroke="#f87171" stroke-width="1.5"/>
@@ -356,7 +361,7 @@
   <!-- SPRING BOOT -->
   <g transform="translate(225 270)">
     <animateTransform attributeName="transform" type="translate" values="225 270;225 285;225 270" dur="3.7s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#4ade80" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#4ade80" stroke-width="2" filter="url(#glow)"/>
     <path d="M24 10 C33 14 35 25 24 38 C13 25 15 14 24 10 Z" fill="none" stroke="#4ade80" stroke-width="2"/>
     <path d="M18 25 C21 22 27 22 30 25" fill="none" stroke="#4ade80" stroke-width="1.5"/>
   </g>
@@ -364,15 +369,15 @@
   <!-- ANGULAR -->
   <g transform="translate(285 300)">
     <animateTransform attributeName="transform" type="translate" values="285 300;285 285;285 300" dur="4.3s" repeatCount="indefinite"/>
-    <rect width="48" height="48" rx="11" fill="#1e293b" stroke="#ef4444" stroke-width="2" filter="url(#glow)"/>
+    <rect width="48" height="48" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="2" filter="url(#glow)"/>
     <polygon points="24,9 37,14 34,32 24,39 14,32 11,14" fill="none" stroke="#ef4444" stroke-width="2"/>
     <text x="24" y="31" fill="#ef4444" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">A</text>
   </g>
 
   <!-- MAIN TEXT -->
   <g transform="translate(835 110)">
-    <text x="0" y="0" class="title" text-anchor="middle">Md Sihab Sharar</text>
-    <path d="M-260 20 Q0 45 280 15" fill="none" stroke="#a5caff" stroke-width="3" stroke-linecap="round"/>
+    <text x="0" y="0" class="title" text-anchor="middle" filter="url(#glow)">Md Sihab Sharar</text>
+    <path d="M-260 20 Q0 45 280 15" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
     <text x="0" y="65" class="subtitle" text-anchor="middle">Aspiring Full Stack Software Engineer</text>
   </g>
 
@@ -380,37 +385,37 @@
   <g transform="translate(595 215)">
     <!-- Java -->
     <g>
-      <rect width="42" height="42" rx="8" fill="none" stroke="#f87171" stroke-width="2" filter="url(#glow)"/>
+      <rect width="42" height="42" rx="8" fill="#0f172a" stroke="#f87171" stroke-width="2" filter="url(#glow)"/>
       <text x="21" y="27" class="icon" fill="#f87171" text-anchor="middle">Java</text>
     </g>
 
     <!-- Spring -->
     <g transform="translate(80 0)">
-      <rect width="42" height="42" rx="8" fill="none" stroke="#4ade80" stroke-width="2" filter="url(#glow)"/>
+      <rect width="42" height="42" rx="8" fill="#0f172a" stroke="#4ade80" stroke-width="2" filter="url(#glow)"/>
       <text x="21" y="27" class="icon" fill="#4ade80" text-anchor="middle">SP</text>
     </g>
 
     <!-- TypeScript -->
     <g transform="translate(160 0)">
-      <rect width="42" height="42" rx="8" fill="none" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+      <rect width="42" height="42" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
       <text x="21" y="27" class="icon" fill="#38bdf8" text-anchor="middle">TS</text>
     </g>
 
     <!-- React -->
     <g transform="translate(240 0)">
-      <rect width="42" height="42" rx="8" fill="none" stroke="#c084fc" stroke-width="2" filter="url(#glow)"/>
+      <rect width="42" height="42" rx="8" fill="#0f172a" stroke="#c084fc" stroke-width="2" filter="url(#glow)"/>
       <text x="21" y="27" class="icon" fill="#c084fc" text-anchor="middle">React</text>
     </g>
 
     <!-- Tailwind -->
     <g transform="translate(320 0)">
-      <rect width="42" height="42" rx="8" fill="none" stroke="#22d3ee" stroke-width="2" filter="url(#glow)"/>
+      <rect width="42" height="42" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="2" filter="url(#glow)"/>
       <text x="21" y="27" class="icon" fill="#22d3ee" text-anchor="middle">TW</text>
     </g>
 
     <!-- MySQL -->
     <g transform="translate(400 0)">
-      <rect width="42" height="42" rx="8" fill="none" stroke="#e879f9" stroke-width="2" filter="url(#glow)"/>
+      <rect width="42" height="42" rx="8" fill="#0f172a" stroke="#e879f9" stroke-width="2" filter="url(#glow)"/>
       <text x="21" y="27" class="icon" fill="#e879f9" text-anchor="middle">SQL</text>
     </g>
   </g>
@@ -420,8 +425,8 @@
 
   <!-- Email -->
   <g transform="translate(680 335)">
-    <rect x="0" y="0" width="24" height="18" rx="3" fill="none" stroke="#94a3b8" stroke-width="2"/>
-    <path d="M2 3 L12 11 L22 3" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="0" y="0" width="24" height="18" rx="3" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M2 3 L12 11 L22 3" fill="none" stroke="#38bdf8" stroke-width="2"/>
     <text x="35" y="16" class="contact">mdsihabsharar22@gmail.com</text>
   </g>
 
