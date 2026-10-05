@@ -2,11 +2,12 @@
   
 <!--- about --->  
 ## About Me
-- 👋 Hi, I’m **[@Md-sihab11](https://github.com/Md-sihab11)**
-- 🖥️ I’m a passionate developer focused on **Java & Spring Boot backend development** and modern frontend development.
-- ⚙️ Building scalable backend applications and working with **Java, Spring Boot, and MySQL**.
-- 🎨 Creating responsive UIs using **React, TypeScript, and Tailwind CSS**.
-- 🧩 Passionate about solving data structure & algorithm problems in **C & C++**.
+* 👋 Hi, I’m Md Shihab Sharar
+* 🧑‍💻 I’m a developer focused on **Java & Spring Boot backend development** and modern frontend technologies.
+* ⚙️ Building scalable backend applications with **Java, Spring Boot, and MySQL**.
+* 🎨 Building responsive and modern UIs with **React, TypeScript, Next.js, and Tailwind CSS**.
+* 🧠 Started my programming journey with **C & C++**, spending 5+ months solving **Competitive Programming and Data Structures & Algorithms** problems.
+* 🚀 Currently focused on building **full-stack applications**, strengthening my backend skills, and improving my problem-solving abilities.
 - 📫 Feel free to reach me out via **[Email](mailto:mdsihabsharar22@gmail.com)**
 
 <p align="center">
